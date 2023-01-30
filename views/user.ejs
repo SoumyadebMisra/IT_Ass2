@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>User Details</title>
+</head>
+<body>
+    <div>
+        <h1>User Name : <%= user.username %></h1>
+        <div><a href="/users/<%= user.username %>/upload">Upload File</a></div>
+        <div><a href="/users/logout">Log out</a></div>
+        <div><a href="/files">All Files</a></div>
+        <h3>Files :</h3>
+        <%user.files.map((file)=>{ %>
+            <%- file %>  <a href="/files/<%= file %>">Download</a><br>
+        <%})%>
+    </div>
+</body>
+</html>
